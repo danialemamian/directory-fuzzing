@@ -39,7 +39,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run ffuf with 500 error handling.")
     parser.add_argument("-w", "--wordlist", required=True, help="Path to the wordlist file.")
     parser.add_argument("-u", "--url", required=True, help="Target URL with FUZZ placeholder.")
-    parser.add_argument("-r", "--rate", default="25", help="Rate of requests per second (default: 25).")
+    parser.add_argument("-r", "--rate", default="50", help="Rate of requests per second (default: 50).")
 
     # Parse arguments
     args = parser.parse_args()
