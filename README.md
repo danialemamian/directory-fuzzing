@@ -17,3 +17,18 @@ This Python script automates the process of running the `ffuf` tool, monitors it
    ```bash
    git clone https://github.com/your-username/ffuf-monitor.git
    cd ffuf-monitor
+## Example Command
+The default `ffuf` command in the script is:
+
+```bash
+ffuf -w /path/to/wordlist.txt -u https://example.com/FUZZ -rate 1 -ac -c -r
+
+## Example Output
+Starting ffuf scan...
+.git/HEAD               [Status: 500, Size: 38652, Words: 305, Lines: 1, Duration: 12ms]
+[!] Detected 500 error. Pausing for 60 seconds...
+[+] Resuming ffuf scan...
+CVS/Entries             [Status: 500, Size: 38654, Words: 305, Lines: 1, Duration: 13ms]
+[!] Detected 500 error. Pausing for 60 seconds...
+[+] Resuming ffuf scan...
+ffuf scan completed.
