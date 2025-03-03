@@ -15,7 +15,7 @@ This Python script automates the process of running the `ffuf` tool, monitors it
 ## Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/danialemn/ffuf-monitor.git
+   git clone https://github.com/danialemn/directory-fuzzing
    cd ffuf-monitor
 ## Example Command
 The default `ffuf` command in the script is:
