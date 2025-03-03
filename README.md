@@ -21,6 +21,7 @@ This Python script automates the process of running the `ffuf` tool, monitors it
 
 ```bash
 python3 ffuf.py -w /path/to/wordlist.txt -u https://example.com/FUZZ -r 3
+
 ## Example Output
 Starting ffuf scan...
 .git/HEAD               [Status: 500, Size: 38652, Words: 305, Lines: 1, Duration: 12ms]
