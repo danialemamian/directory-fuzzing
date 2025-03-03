@@ -20,7 +20,7 @@ This Python script automates the process of running the `ffuf` tool, monitors it
 ## Example Command
 
 ```bash
-python3 ffuf.py -w /path/to/wordlist.txt -u https://example.com/FUZZ -r 3
+python3 ffuf.py -w /path/to/wordlist.txt -u https://example.com/FUZZ -r rate
 
 ## Example Output
 Starting ffuf scan...
