@@ -3,10 +3,10 @@ import time
 import re
 
 # Define the ffuf command
-ffuf_command = [
+ffuf_command = [ 
     "ffuf",
-    "-w", "/media/danial/f9e7e1d7-a04f-4bac-b16b-a85a5b2a5fed/WordList-main/common.txt",
-    "-u", "https://lm.bki.ir/FUZZ",
+    "-w", "/path/to/wordlist.txt",
+    "-u", "https://example.com/FUZZ",
     "-rate", "3",
     "-ac",
     "-c",
