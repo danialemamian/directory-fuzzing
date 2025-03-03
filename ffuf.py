@@ -28,7 +28,7 @@ def run_ffuf():
             # Check for 500 error
             if re.search(r"\[Status: 500", output):
                 print("[!] Detected 500 error. Pausing for 60 seconds...")
-                time.sleep(90)  # Pause for 90 seconds
+                time.sleep(60)  # Pause for 60 seconds
                 print("[+] Resuming ffuf scan...")
 
     # Wait for the process to complete
