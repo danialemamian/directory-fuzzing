@@ -1,12 +1,12 @@
 # FFUF Monitor with 500 Error Handling
 
-This Python script automates the process of running the `ffuf` tool, monitors its output for HTTP 500 errors, and pauses for 60 seconds if such an error is encountered. After the pause, it resumes the task.
-
+This Python script automates the process of running the `ffuf` tool, monitors its output for HTTP 500 errors, and pauses for 60 seconds if such an error is encountered. After the pause, it resumes the task. This is particularly useful for bypassing Web Application Firewalls (WAFs) that may temporarily ban your IP after detecting suspicious activity.
 ## Features
 - Runs `ffuf` with a specified wordlist and target URL.
 - Monitors `ffuf` output in real-time.
 - Detects HTTP 500 errors and pauses execution for 60 seconds.
 - Resumes scanning automatically after the pause.
+- **Efficient for bypassing WAFs**: Many sites with WAFs will ban your IP temporarily after detecting excessive requests or suspicious activity. By pausing on HTTP 500 errors, this script helps avoid IP bans and allows you to continue scanning after the WAF cooldown period.
 
 ## Prerequisites
 - Python 3.x
