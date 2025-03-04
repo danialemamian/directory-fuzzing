@@ -16,7 +16,14 @@ This tool is particularly useful when bypassing WAFs: Many websites with WAFs te
 - **C Compiler** (e.g., GCC) to compile the program.
 - **libcurl** library for HTTP requests.
 - **Wordlist** file for fuzzing.
+### Installing libcurl
 
+To use this program, you need to have the **libcurl** library installed. Follow the steps below for installation:
+
+#### On Ubuntu/Debian-based systems:
+```bash
+sudo apt-get update
+sudo apt-get install libcurl4-openssl-dev
 ## Installation
 1. Clone this repository:
     ```bash
