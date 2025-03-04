@@ -28,4 +28,6 @@ sudo apt-get install libcurl4-openssl-dev
 ```
 
 ## Example Command
+```bash
 ./fuff -w /path/to/wordlist.txt -u https://example.com/FUZZ -r rate -o output.txt
+```
