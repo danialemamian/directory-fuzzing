@@ -1,33 +1,37 @@
 # FFUF Monitor with 500 Error Handling
 
-This Python script automates the process of running the `ffuf` tool, monitors its output for HTTP 500 errors, and pauses for 60 seconds if such an error is encountered. After the pause, it resumes the task. This is particularly useful for bypassing Web Application Firewalls (WAFs) that may temporarily ban your IP after detecting suspicious activity.
+This C program automates the process of performing directory fuzzing on a given target URL. It monitors the HTTP response codes, specifically handling **500 errors** by pausing the execution for 120 seconds if encountered. After the pause, the program will resume the task, making it useful for bypassing Web Application Firewalls (WAFs) that temporarily block requests after detecting suspicious activity.
+
 ## Features
-- Runs `ffuf` with a specified wordlist and target URL.
-- Monitors `ffuf` output in real-time.
-- Detects HTTP 500 errors and pauses execution for 60 seconds.
+- Runs a fuzzing tool with a specified wordlist and target URL.
+- Monitors the output in real-time.
+- Detects HTTP **500** errors and pauses execution for 120 seconds.
 - Resumes scanning automatically after the pause.
-- **Efficient for bypassing WAFs**: Many sites with WAFs will ban your IP temporarily after detecting excessive requests or suspicious activity. By pausing on HTTP 500 errors, this script helps avoid IP bans and allows you to continue scanning after the WAF cooldown period.
+- Detects **0 status code** errors (indicating connection issues) and pauses for 300 seconds before resuming.
+- Option to limit the rate of requests per second.
+
+This tool is particularly useful when bypassing WAFs: Many websites with WAFs temporarily block your IP after detecting suspicious behavior. By pausing on HTTP **500 errors**, this program helps avoid IP bans and allows you to continue scanning after the cooldown period.
 
 ## Prerequisites
-- Python 3.x
-- `ffuf` installed and accessible in your system's PATH.
+- **C Compiler** (e.g., GCC) to compile the program.
+- **libcurl** library for HTTP requests.
+- **Wordlist** file for fuzzing.
 
 ## Installation
 1. Clone this repository:
-   ```bash
-   git clone https://github.com/danialemamian/directory-fuzzing
-   cd ffuf-monitor
+    ```bash
+    git clone https://github.com/danialemamian/directory-fuzzing
+    ```
+2. Navigate into the project directory:
+    ```bash
+    cd directory-fuzzing
+    ```
+3. Compile the program:
+    ```bash
+    gcc -o fuff fuff.c -lcurl
+    ```
+
 ## Example Command
 
 ```bash
-python3 ffuf.py -w /path/to/wordlist.txt -u https://example.com/FUZZ -r rate
-
-## Example Output
-Starting ffuf scan...
-.git/HEAD               [Status: 500, Size: 38652, Words: 305, Lines: 1, Duration: 12ms]
-[!] Detected 500 error. Pausing for 60 seconds...
-[+] Resuming ffuf scan...
-CVS/Entries             [Status: 500, Size: 38654, Words: 305, Lines: 1, Duration: 13ms]
-[!] Detected 500 error. Pausing for 60 seconds...
-[+] Resuming ffuf scan...
-ffuf scan completed.
+./fuff -w /path/to/wordlist.txt -u https://example.com/FUZZ -r 50 -o output.txt
