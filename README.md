@@ -16,6 +16,7 @@ This tool is particularly useful when bypassing WAFs: Many websites with WAFs te
 - **C Compiler** (e.g., GCC) to compile the program.
 - **libcurl** library for HTTP requests.
 - **Wordlist** file for fuzzing.
+
 ### Installing libcurl
 
 To use this program, you need to have the **libcurl** library installed. Follow the steps below for installation:
@@ -24,21 +25,3 @@ To use this program, you need to have the **libcurl** library installed. Follow 
 ```bash
 sudo apt-get update
 sudo apt-get install libcurl4-openssl-dev
-## Installation
-1. Clone this repository:
-    ```bash
-    git clone https://github.com/danialemamian/directory-fuzzing
-    ```
-2. Navigate into the project directory:
-    ```bash
-    cd directory-fuzzing
-    ```
-3. Compile the program:
-    ```bash
-    gcc -o fuff fuff.c -lcurl
-    ```
-
-## Example Command
-
-```bash
-./fuff -w /path/to/wordlist.txt -u https://example.com/FUZZ -r 50 -o output.txt
